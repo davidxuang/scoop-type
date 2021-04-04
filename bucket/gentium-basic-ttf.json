@@ -1,0 +1,36 @@
+{
+    "version": "1.102",
+    "description": "A typeface family designed to enable the diverse ethnic groups around the world who use the Latin and Greek scripts to produce readable, high-quality publications.",
+    "homepage": "https://software.sil.org/gentium/",
+    "license": "OFL-1.1",
+    "url": "https://software.sil.org/downloads/r/gentium/GentiumBasic_1102.zip",
+    "hash": "2f1a2c5491d7305dffd3520c6375d2f3e14931ee35c6d8ae1e8f098bf1a7b3cc",
+    "extract_dir": "GentiumBasic_1102",
+    "checkver": {
+        "url": "https://software.sil.org/gentium/download/",
+        "regex": "Gentium Basic v?([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://software.sil.org/downloads/r/gentium/GentiumBasic_$cleanVersion.zip",
+        "extract_dir": "GentiumBasic_$cleanVersion"
+    },
+    "installer": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.ttf' | ForEach-Object {",
+            "  New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $_.Name -Force | Out-Null",
+            "  Copy-Item $_.FullName -destination \"$env:windir\\Fonts\"",
+            "}"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.ttf' | ForEach-Object {",
+            "  Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue",
+            "  Remove-Item \"$env:windir\\Fonts\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
+            "}",
+            "Write-Host \"The 'Gentium Basic' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta"
+        ]
+    }
+}
