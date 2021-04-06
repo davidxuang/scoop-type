@@ -1,0 +1,35 @@
+{
+    "version": "1.001",
+    "description": "A multilingual extension of Fira Sans.",
+    "homepage": "https://bboxtype.com/typefaces/FiraGO/",
+    "license": "OFL-1.1",
+    "url": "https://bboxtype.com/downloads/FiraGO/Download_Folder_FiraGO_1001.zip",
+    "hash": "d3866120498c496931265a7b199dc0a54f44330170dde1178bb982fffcc6bb52",
+    "extract_dir": "Download_Folder_FiraGO_1001/Fonts/FiraGO_OTF_1001",
+    "checkver": {
+        "regex": "Version: ([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://bboxtype.com/downloads/FiraGO/Download_Folder_FiraGO_$cleanVersion.zip",
+        "extract_dir": "Download_Folder_FiraGO_$cleanVersion/Fonts/FiraGO_OTF_$cleanVersion"
+    },
+    "installer": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.otf' -Recurse | ForEach-Object {",
+            "  New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $_.Name -Force | Out-Null",
+            "  Copy-Item $_.FullName -destination \"$env:windir\\Fonts\"",
+            "}"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.otf' -Recurse | ForEach-Object {",
+            "  Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue",
+            "  Remove-Item \"$env:windir\\Fonts\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
+            "}",
+            "Write-Host \"The 'FiraGO' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta"
+        ]
+    }
+}
