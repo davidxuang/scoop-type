@@ -1,0 +1,35 @@
+{
+    "version": "4.301",
+    "description": "A humanist sans-serif typeface.",
+    "homepage": "https://bboxtype.com/typefaces/FiraSans/",
+    "license": "OFL-1.1",
+    "url": "https://bboxtype.com/downloads/Fira/Download_Folder_FiraSans_4301.zip",
+    "hash": "ff966173d53fc55cca9661fbdedb08a91a2f3984d5415b51cfb31c2bc4c18f19",
+    "extract_dir": "Download_Folder_FiraSans_4301/Fonts/Fira_Sans_OTF_4301",
+    "checkver": {
+        "regex": "Version: Sans ([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://bboxtype.com/downloads/Fira/Download_Folder_FiraSans_$cleanVersion.zip",
+        "extract_dir": "Download_Folder_FiraSans_$cleanVersion/Fonts/Fira_Sans_OTF_$cleanVersion"
+    },
+    "installer": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.otf' -Recurse | ForEach-Object {",
+            "  New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $_.Name -Force | Out-Null",
+            "  Copy-Item $_.FullName -destination \"$env:windir\\Fonts\"",
+            "}"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.otf' -Recurse | ForEach-Object {",
+            "  Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue",
+            "  Remove-Item \"$env:windir\\Fonts\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
+            "}",
+            "Write-Host \"The 'Fira Sans' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta"
+        ]
+    }
+}
