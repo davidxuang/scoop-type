@@ -1,0 +1,35 @@
+{
+    "version": "3.206",
+    "description": "Monospaced variant of Fira Sans.",
+    "homepage": "https://bboxtype.com/typefaces/FiraSans/",
+    "license": "OFL-1.1",
+    "url": "https://bboxtype.com/downloads/Fira/Fira_Mono_3_2.zip",
+    "hash": "77b83feda1f1c5b8e8da07498aff6fa0f9d2d16bbfa2095dd7e7696c887c6128",
+    "extract_dir": "Fira_Mono_3_2/Fonts/FiraMono_OTF_32",
+    "checkver": {
+        "regex": "Version: Sans (?<sans>[\\d.]+) / Mono (\\d\\.(?<minor>\\d)\\d+)"
+    },
+    "autoupdate": {
+        "url": "https://bboxtype.com/downloads/Fira/Fira_Mono_$majorVersion_$matchMinor.zip",
+        "extract_dir": "Fira_Mono_$majorVersion_$matchMinor/Fonts/FiraMono_OTF_$majorVersion$matchMinor"
+    },
+    "installer": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.otf' | ForEach-Object {",
+            "  New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $_.Name -Force | Out-Null",
+            "  Copy-Item $_.FullName -destination \"$env:windir\\Fonts\"",
+            "}"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.otf' | ForEach-Object {",
+            "  Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue",
+            "  Remove-Item \"$env:windir\\Fonts\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
+            "}",
+            "Write-Host \"The 'Fira Mono' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta"
+        ]
+    }
+}
