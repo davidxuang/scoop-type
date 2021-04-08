@@ -1,0 +1,33 @@
+{
+    "version": "2.002",
+    "description": "A set of OpenType/CFF Pan-CJK fonts.",
+    "homepage": "https://source.typekit.com/source-han-sans/",
+    "license": "OFL-1.1",
+    "url": "https://github.com/adobe-fonts/source-han-sans/releases/download/2.002R/SourceHanSans.ttc",
+    "hash": "8c06d305a45d56fbc81ec67ca0afa552fbae1e69d4d42b49016a9ace677f89d8",
+    "checkver": {
+        "github": "https://github.com/adobe-fonts/source-han-sans"
+    },
+    "autoupdate": {
+        "url": "https://github.com/adobe-fonts/source-han-sans/releases/download/$versionR/SourceHanSans.ttc"
+    },
+    "installer": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.ttc' | ForEach-Object {",
+            "  New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $_.Name -Force | Out-Null",
+            "  Copy-Item $_.FullName -destination \"$env:windir\\Fonts\"",
+            "}"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.ttc' | ForEach-Object {",
+            "  Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue",
+            "  Remove-Item \"$env:windir\\Fonts\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
+            "}",
+            "Write-Host \"The 'Source Han Sans' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta"
+        ]
+    }
+}
