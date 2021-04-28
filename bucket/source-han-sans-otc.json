@@ -1,10 +1,10 @@
 {
-    "version": "2.003",
+    "version": "2.004",
     "description": "A set of OpenType/CFF Pan-CJK fonts.",
     "homepage": "https://source.typekit.com/source-han-sans/",
     "license": "OFL-1.1",
-    "url": "https://github.com/adobe-fonts/source-han-sans/raw/2.003R/SuperOTC/SourceHanSans.ttc.zip",
-    "hash": "02947fcec1fbb97b3369dc30113c9f07363359aed82788bf38eef17b894bf045",
+    "url": "https://github.com/adobe-fonts/source-han-sans/raw/2.004R/SuperOTC/SourceHanSans.ttc.zip",
+    "hash": "6f59118a9adda5a7fe4e9e6bb538309f7e1d3c5411f9a9d32af32a79501b7e4f",
     "checkver": {
         "github": "https://github.com/adobe-fonts/source-han-sans"
     },
