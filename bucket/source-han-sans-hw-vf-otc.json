@@ -1,20 +1,20 @@
 {
-    "version": "2.003",
+    "version": "2.004",
     "description": "A set of OpenType/CFF Pan-CJK fonts.",
     "homepage": "https://source.typekit.com/source-han-sans/",
     "license": "OFL-1.1",
-    "url": "https://github.com/adobe-fonts/source-han-sans/raw/2.003R/Variable/OTC/SourceHanSansHW-VF.ttc",
-    "hash": "559bb7f8114258b73cbfe8bbb3bfe5a09dae63d73e82ed287f42a95fc3547a1d",
+    "url": "https://github.com/adobe-fonts/source-han-sans/raw/2.004R/Variable/OTC/SourceHanSansHW-VF.otf.ttc#/SourceHanSansHW-VF.otc",
+    "hash": "e6f29582c77f1a9d85a343e2f483c9aee8c10751e06d294ee55c0a5eb8be290e",
     "checkver": {
         "github": "https://github.com/adobe-fonts/source-han-sans"
     },
     "autoupdate": {
-        "url": "https://github.com/adobe-fonts/source-han-sans/raw/$versionR/Variable/OTC/SourceHanSansHW-VF.ttc"
+        "url": "https://github.com/adobe-fonts/source-han-sans/raw/$versionR/Variable/OTC/SourceHanSansHW-VF.otf.ttc#/SourceHanSansHW-VF.otc"
     },
     "installer": {
         "script": [
             "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
-            "Get-ChildItem $dir -filter '*.ttc' | ForEach-Object {",
+            "Get-ChildItem $dir -filter '*.otc' | ForEach-Object {",
             "  New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $_.Name -Force | Out-Null",
             "  Copy-Item $_.FullName -destination \"$env:windir\\Fonts\"",
             "}"
@@ -23,7 +23,7 @@
     "uninstaller": {
         "script": [
             "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
-            "Get-ChildItem $dir -filter '*.ttc' | ForEach-Object {",
+            "Get-ChildItem $dir -filter '*.otc' | ForEach-Object {",
             "  Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue",
             "  Remove-Item \"$env:windir\\Fonts\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
             "}",
