@@ -1,10 +1,10 @@
 {
-    "version": "3.18",
+    "version": "3.19",
     "description": "A typeface specially designed for user interfaces with focus on high legibility of small-to-medium sized text on computer screens.",
     "homepage": "https://rsms.me/inter/",
     "license": "OFL-1.1",
-    "url": "https://github.com/rsms/inter/releases/download/v3.18/Inter-3.18.zip",
-    "hash": "bcffbda52f7b0c7c2a842ac7e77869ff6327cea77fa9035393df695ae90bdc5b",
+    "url": "https://github.com/rsms/inter/releases/download/v3.19/Inter-3.19.zip",
+    "hash": "150ab6230d1762a57bebf35dfc04d606ff91598a31d785f7f100356ecdcc0032",
     "extract_dir": "Inter Hinted for Windows/Desktop",
     "checkver": {
         "github": "https://github.com/rsms/inter"
