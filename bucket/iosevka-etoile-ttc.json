@@ -1,10 +1,10 @@
 {
-    "version": "7.0.4",
+    "version": "7.1.0",
     "description": "Slender typeface for code, from code.",
     "homepage": "https://typeof.net/Iosevka/",
     "license": "OFL-1.1",
-    "url": "https://github.com/be5invis/Iosevka/releases/download/v7.0.4/super-ttc-iosevka-etoile-7.0.4.zip",
-    "hash": "7e67c12ba26669cf1160669a23a4f775c7de6dd07b44341ee22003dd22f5ba41",
+    "url": "https://github.com/be5invis/Iosevka/releases/download/v7.1.0/super-ttc-iosevka-etoile-7.1.0.zip",
+    "hash": "eae774d7df23f0198bd77c9570a503e388b547700dacb46857e7bacf20c7d992",
     "checkver": {
         "github": "https://github.com/be5invis/Iosevka"
     },
