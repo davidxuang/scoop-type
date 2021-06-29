@@ -1,16 +1,16 @@
 {
-    "version": "5.000",
+    "version": "6.000",
     "description": "A Unicode-based font family that supports the wide range of languages that use the Latin and Cyrillic scripts.",
     "homepage": "https://software.sil.org/doulos/",
     "license": "OFL-1.1",
-    "url": "https://software.sil.org/downloads/r/doulos/DoulosSIL-5.000.zip",
-    "hash": "0b309c3db813a98ce884c0bd25c7f5c0bd96bbffd076459e39298812ca22472e",
-    "extract_dir": "DoulosSIL-5.000",
+    "url": "https://github.com/silnrsi/font-doulos/releases/download/v6.000/DoulosSIL-6.000.tar.xz",
+    "hash": "af2b8c27f8a97512f2faf7b54cc8550a5c4c72ecb42327c16e8985a6660a0c11",
+    "extract_dir": "DoulosSIL-6.000",
     "checkver": {
-        "regex": "Release v?([\\d.]+)"
+        "github": "https://github.com/silnrsi/font-doulos"
     },
     "autoupdate": {
-        "url": "https://software.sil.org/downloads/r/doulos/DoulosSIL-$version.zip",
+        "url": "https://github.com/silnrsi/font-doulos/releases/download/v$version/DoulosSIL-$version.tar.xz",
         "extract_dir": "DoulosSIL-$version"
     },
     "installer": {
