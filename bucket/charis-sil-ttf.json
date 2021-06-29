@@ -1,16 +1,16 @@
 {
-    "version": "5.000",
+    "version": "6.000",
     "description": "A Unicode-based font family that supports the wide range of languages that use the Latin and Cyrillic scripts.",
     "homepage": "https://software.sil.org/charis/",
     "license": "OFL-1.1",
-    "url": "https://software.sil.org/downloads/r/charis/CharisSIL-5.000.zip",
-    "hash": "5e3e5473b30363008c289cc87e2aa584a0916087a63a3f689defa8e0cee09bfd",
-    "extract_dir": "CharisSIL-5.000",
+    "url": "https://github.com/silnrsi/font-charis/releases/download/v6.000/CharisSIL-6.000.tar.xz",
+    "hash": "e63ead24d8a20db69d5afcafeea02d66e559a0fb4af5fe65bfe787e04cb2d8bd",
+    "extract_dir": "CharisSIL-6.000",
     "checkver": {
-        "regex": "Release v?([\\d.]+)"
+        "github": "https://github.com/silnrsi/font-charis"
     },
     "autoupdate": {
-        "url": "https://software.sil.org/downloads/r/charis/CharisSIL-$version.zip",
+        "url": "https://github.com/silnrsi/font-charis/releases/download/v$version/CharisSIL-$version.tar.xz",
         "extract_dir": "CharisSIL-$version"
     },
     "installer": {
