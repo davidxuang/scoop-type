@@ -1,11 +1,11 @@
 {
-    "version": "6.000",
+    "version": "6.001",
     "description": "A typeface family designed to enable the diverse ethnic groups around the world who use the Latin, Cyrillic and Greek scripts to produce readable, high-quality publications.",
     "homepage": "https://software.sil.org/gentium/",
     "license": "OFL-1.1",
-    "url": "https://github.com/silnrsi/font-gentium/releases/download/v6.000/GentiumPlus-6.000.zip",
-    "hash": "bbbd52cacf07a15c487ae90e34b0c2b7504173d0b289924440652b750b750db2",
-    "extract_dir": "GentiumPlus-6.000",
+    "url": "https://github.com/silnrsi/font-gentium/releases/download/v6.001/GentiumPlus-6.001.zip",
+    "hash": "7589cb8fa9887c34070e14fc78108102657ffac7ed36e81bb2058bde2da9430c",
+    "extract_dir": "GentiumPlus-6.001",
     "checkver": {
         "github": "https://github.com/silnrsi/font-gentium"
     },
