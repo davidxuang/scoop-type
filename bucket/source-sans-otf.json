@@ -10,7 +10,7 @@
         "github": "https://github.com/adobe-fonts/source-sans"
     },
     "autoupdate": {
-        "url": "https://github.com/adobe-fonts/source-sans/releases/download/$versionR/source-sans-$majorVersion.$minorVersionR.zip"
+        "url": "https://github.com/adobe-fonts/source-sans/releases/download/$versionR/OTF-source-sans-$majorVersion.$minorVersionR.zip"
     },
     "installer": {
         "script": [
