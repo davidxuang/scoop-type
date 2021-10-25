@@ -1,0 +1,33 @@
+{
+    "version": "2.000",
+    "description": "A set of OpenType/CFF Pan-CJK fonts.",
+    "homepage": "https://source.typekit.com/source-han-serif/",
+    "license": "OFL-1.1",
+    "url": "https://github.com/adobe-fonts/source-han-serif/raw/2.000R/Variable/OTC/SourceHanSerif-VF.otf.ttc#/SourceHanSerif-VF.otc",
+    "hash": "5568867e4ff49217a93acc0c8d5e5f94076e492a095d2500d236431dc51924c9",
+    "checkver": {
+        "github": "https://github.com/adobe-fonts/source-han-serif"
+    },
+    "autoupdate": {
+        "url": "https://github.com/adobe-fonts/source-han-serif/raw/$versionR/Variable/OTC/SourceHanSerif-VF.otf.ttc#/SourceHanSerif-VF.otc"
+    },
+    "installer": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.otc' | ForEach-Object {",
+            "  New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $_.Name -Force | Out-Null",
+            "  Copy-Item $_.FullName -destination \"$env:windir\\Fonts\"",
+            "}"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if (!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
+            "Get-ChildItem $dir -filter '*.otc' | ForEach-Object {",
+            "  Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue",
+            "  Remove-Item \"$env:windir\\Fonts\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
+            "}",
+            "Write-Host \"The 'Source Han Serif VF' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta"
+        ]
+    }
+}
