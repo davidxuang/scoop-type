@@ -1,15 +1,15 @@
 {
-    "version": "1.001",
+    "version": "2.000",
     "description": "A set of OpenType/CFF Pan-CJK fonts.",
     "homepage": "https://source.typekit.com/source-han-serif/",
     "license": "OFL-1.1",
-    "url": "https://github.com/adobe-fonts/source-han-serif/releases/download/1.001R/SourceHanSerif.ttc",
-    "hash": "85cc634fa228286ca307803bbb4ca61f61fa821b3ed573f4f07c6f0c064426b5",
+    "url": "https://github.com/adobe-fonts/source-han-serif/releases/download/2.000R/SourceHanSerif.ttc.zip",
+    "hash": "443832c1a6fb8304fe6013bb175289bca3afd04ff7fbb662fe9425f940ec19c3",
     "checkver": {
         "github": "https://github.com/adobe-fonts/source-han-serif"
     },
     "autoupdate": {
-        "url": "https://github.com/adobe-fonts/source-han-serif/releases/download/$versionR/SourceHanSerif.ttc"
+        "url": "https://github.com/adobe-fonts/source-han-serif/releases/download/$versionR/SourceHanSerif.ttc.zip"
     },
     "installer": {
         "script": [
