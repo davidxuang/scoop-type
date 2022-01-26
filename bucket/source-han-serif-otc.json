@@ -9,7 +9,7 @@
         "github": "https://github.com/adobe-fonts/source-han-serif"
     },
     "autoupdate": {
-        "url": "https://github.com/adobe-fonts/source-han-serif/releases/download/$versionR/SourceHanSerif.ttc.zip"
+        "url": "https://github.com/adobe-fonts/source-han-serif/releases/download/$versionR/01_SourceHanSerif.ttc.zip"
     },
     "installer": {
         "script": [
