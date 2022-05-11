@@ -1,10 +1,10 @@
 {
-    "version": "2.038",
+    "version": "2.032",
     "description": "Monospaced font family for user interface and coding environments.",
     "homepage": "https://adobe-fonts.github.io/source-sans",
     "license": "OFL-1.1",
-    "url": "https://github.com/adobe-fonts/source-code-pro/releases/download/2.038R-ro%2F1.058R-it%2F1.018R-VAR/TTF-source-code-pro-2.038R-ro-1.058R-it.zip",
-    "hash": "478028ec70adc1ff73848a546c3ad266716a0096cd1f1a1ef18aeff0199d5996",
+    "url": "https://github.com/adobe-fonts/source-code-pro/releases/download/2.032R-ro%2F1.052R-it%2F1.012R-VAR/TTF-source-code-pro-2.032R-ro-1.052R-it.zip",
+    "hash": "026d7644bed97a7934caa63eacd9fd83beeacfd301d9d29fcc899f32d4004a12",
     "checkver": {
         "url": "https://api.github.com/repos/adobe-fonts/source-code-pro/releases/latest",
         "regex": "([\\d.]+)R?-ro\\/(?<it>[\\d.]+)R?-it\\/(?<var>[\\d.]+)R?-VAR"
