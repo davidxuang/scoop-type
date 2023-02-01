@@ -1,11 +1,11 @@
 {
-    "version": "6.101",
+    "version": "6.200",
     "description": "A sans-serif, Unicode-compliant font designed especially for literacy use.",
     "homepage": "https://software.sil.org/andika/",
     "license": "OFL-1.1",
-    "url": "https://github.com/silnrsi/font-andika/releases/download/v6.101/Andika-6.101.tar.xz",
-    "hash": "10e5dc4aef9def319ec42c7e441ff37074009635f4d6ba6759bf9c3f2cc84ca4",
-    "extract_dir": "Andika-6.101",
+    "url": "https://github.com/silnrsi/font-andika/releases/download/v6.200/Andika-6.200.tar.xz",
+    "hash": "c703a5c2d656e57539d999d964cd77004fbf55884d9cf84e799ec8f2ee126c32",
+    "extract_dir": "Andika-6.200",
     "checkver": {
         "github": "https://github.com/silnrsi/font-andika"
     },
