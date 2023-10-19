@@ -1,10 +1,10 @@
 {
-    "version": "3.003",
+    "version": "3.002",
     "description": "A typeface designed for source code.",
     "homepage": "https://github.com/source-foundry/Hack",
     "license": "OFL-1.1",
-    "url": "https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.tar.xz",
-    "hash": "d9ed5d0a07525c7e7bd587b4364e4bc41021dd668658d09864453d9bb374a78d",
+    "url": "https://github.com/source-foundry/Hack/releases/download/v3.002/Hack-v3.002-ttf.tar.xz",
+    "hash": "1d0bee4dc4b664a68a2c16cee6f037380471c22794cdad91ec9a8319b0aefcf4",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/source-foundry/Hack/releases/download/v$version/Hack-v$version-ttf.tar.xz"
