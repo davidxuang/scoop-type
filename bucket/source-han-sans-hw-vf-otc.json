@@ -1,10 +1,10 @@
 {
-    "version": "2.004",
+    "version": "2.005",
     "description": "A set of OpenType/CFF Pan-CJK fonts.",
     "homepage": "https://source.typekit.com/source-han-sans/",
     "license": "OFL-1.1",
-    "url": "https://github.com/adobe-fonts/source-han-sans/raw/2.004R/Variable/OTC/SourceHanSansHW-VF.otf.ttc#/SourceHanSansHW-VF.otc",
-    "hash": "e6f29582c77f1a9d85a343e2f483c9aee8c10751e06d294ee55c0a5eb8be290e",
+    "url": "https://github.com/adobe-fonts/source-han-sans/raw/2.005R/Variable/OTC/SourceHanSansHW-VF.otf.ttc#/SourceHanSansHW-VF.otc",
+    "hash": "78d19995b56c4ca3d167e17d02249cc4548fb450c4f943249982ae4a80648053",
     "checkver": {
         "github": "https://github.com/adobe-fonts/source-han-sans"
     },
@@ -90,5 +90,5 @@
             "    Write-Host \"The '$app' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta",
             "}"
         ]
-    } 
+    }
 }
