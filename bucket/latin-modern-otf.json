@@ -1,16 +1,23 @@
 {
-    "version": "2.006",
+    "version": "2.007",
     "description": "A typeface family based on Computer Modern.",
     "homepage": "https://www.gust.org.pl/projects/e-foundry/latin-modern",
     "license": "LPPL-1.3c",
-    "url": "https://www.gust.org.pl/projects/e-foundry/latin-modern/download/lm2.006otf.zip",
-    "hash": "608a6f3de9fbafd70f977fbf21ca32850178dd19b11530385358840c8f291f06",
+    "url": "https://www.gust.org.pl/projects/e-foundry/latin-modern/download/Latin_Modern-otf-2_007-31_03_2026.zip",
+    "hash": "2d8e05083e211ac838a9e306fb5e4856ed37ec15130e185a971e2683a7c5d1a1",
     "checkver": {
         "url": "https://www.gust.org.pl/projects/e-foundry/latin-modern/download",
-        "regex": "/lm([\\d.]+)otf\\.zip"
+        "script": [
+            "$page -match 'v\\.\\s*(?<version>[\\d.]+)' | Out-Null",
+            "$version = $matches['version']",
+            "$page -match '/(?<name>(?:[^/]+)otf(?:[^/]+)\\.zip)' | Out-Null",
+            "$name = $matches['name']",
+            "Write-Output \"$version $name\""
+        ],
+        "regex": "^(.+?) (?<name>.+)$"
     },
     "autoupdate": {
-        "url": "https://www.gust.org.pl/projects/e-foundry/latin-modern/download/lm$versionotf.zip"
+        "url": "https://www.gust.org.pl/projects/e-foundry/latin-modern/download/$matchName"
     },
     "installer": {
         "script": [
