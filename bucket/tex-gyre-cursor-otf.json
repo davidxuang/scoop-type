@@ -1,15 +1,22 @@
 {
-    "version": "2.004",
+    "version": "2.609",
     "description": "A typeface based on URW Nimbus Mono L and can be used as a replacement for Courier.",
     "homepage": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/cursor",
     "license": "LPPL-1.3c",
-    "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/cursor/qcr2.004otf.zip",
-    "hash": "ae8db1c134ec5c1b8c3999116b0610a5ad1c6f47520c3b4712b9bc914458dce9",
+    "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/cursor/tg_cursor-otf-2_609-31_03_2026.zip",
+    "hash": "68b86309e9c12cdd822c99e1cce8eba25b8be3cea3a49902a453351b5b6a83da",
     "checkver": {
-        "regex": "ver. ([\\d.]+)"
+        "script": [
+            "$page -match 'v(?:er)?\\.\\s*(?<version>[\\d.]+)' | Out-Null",
+            "$version = $matches['version']",
+            "$page -match '/(?<name>(?:[^/]+)otf(?:[^/]+)\\.zip)' | Out-Null",
+            "$name = $matches['name']",
+            "Write-Output \"$version $name\""
+        ],
+        "regex": "^(.+?) (?<name>.+)$"
     },
     "autoupdate": {
-        "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/cursor/qcr$versionotf.zip"
+        "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/cursor/$matchName"
     },
     "installer": {
         "script": [
@@ -90,5 +97,5 @@
             "    Write-Host \"The '$app' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta",
             "}"
         ]
-    } 
+    }
 }

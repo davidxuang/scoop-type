@@ -1,16 +1,23 @@
 {
-    "version": "2.501",
+    "version": "2.609",
     "description": "A typeface based on URW Palladio L and can be used as a replacement for Palatino.",
     "homepage": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella",
     "license": "LPPL-1.3c",
-    "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/qpl2_501otf.zip",
-    "hash": "e16078d19860d68a54bcaedc00e35c2a81b396cdc36842700f1d556f89cf8ef2",
-    "extract_dir": "qpl2_501otf",
+    "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/tg_pagella-otf-2_609-31_03_2026.zip",
+    "hash": "1fa1284bf30aefa1885ec5ce6c26b24d160104b331b1978a85a2a8b3c781737d",
+    "extract_dir": "qpl2_609otf",
     "checkver": {
-        "regex": "ver. ([\\d.]+)"
+        "script": [
+            "$page -match 'v(?:er)?\\.\\s*(?<version>[\\d.]+)' | Out-Null",
+            "$version = $matches['version']",
+            "$page -match '/(?<name>(?:[^/]+)otf(?:[^/]+)\\.zip)' | Out-Null",
+            "$name = $matches['name']",
+            "Write-Output \"$version $name\""
+        ],
+        "regex": "^(.+?) (?<name>.+)$"
     },
     "autoupdate": {
-        "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/qpl$underscoreVersionotf.zip",
+        "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/pagella/$matchName",
         "extract_dir": "qpl$underscoreVersionotf"
     },
     "installer": {
@@ -92,5 +99,5 @@
             "    Write-Host \"The '$app' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta",
             "}"
         ]
-    } 
+    }
 }

@@ -1,15 +1,22 @@
 {
-    "version": "2.004",
+    "version": "2.609",
     "description": "A typeface based on URW Nimbus Sans L and can be used as a replacement for Helvetica.",
     "homepage": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros",
     "license": "LPPL-1.3c",
-    "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhv2.004otf.zip",
-    "hash": "755954b7349b803fc1c3d82fe9d9c4f7cf66467af718eaaf4f78ae1a09bf265d",
+    "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/tg_heros-otf-2_609-31_03_2026.zip",
+    "hash": "a5803bb6211202b0e52447bbcbd41a209716b0952224c1116a28b6d342225abe",
     "checkver": {
-        "regex": "ver. ([\\d.]+)"
+        "script": [
+            "$page -match 'v(?:er)?\\.\\s*(?<version>[\\d.]+)' | Out-Null",
+            "$version = $matches['version']",
+            "$page -match '/(?<name>(?:[^/]+)otf(?:[^/]+)\\.zip)' | Out-Null",
+            "$name = $matches['name']",
+            "Write-Output \"$version $name\""
+        ],
+        "regex": "^(.+?) (?<name>.+)$"
     },
     "autoupdate": {
-        "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhv$versionotf.zip"
+        "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/$matchName"
     },
     "installer": {
         "script": [
@@ -90,5 +97,5 @@
             "    Write-Host \"The '$app' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta",
             "}"
         ]
-    } 
+    }
 }

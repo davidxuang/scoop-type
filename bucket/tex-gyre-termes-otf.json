@@ -1,15 +1,22 @@
 {
-    "version": "2.004",
+    "version": "2.609",
     "description": "A typeface based on URW Nimbus Roman No9 L and can be used as a replacement for Times New Roman.",
     "homepage": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/termes",
     "license": "LPPL-1.3c",
-    "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/qtm2.004otf.zip",
-    "hash": "5d467d8db17c96037b04409d682f071d7cc33cf94eda35a0a0465776a2c862b2",
+    "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/tg_termes-otf-2_609-31_03_2026.zip",
+    "hash": "939908103cc061c6b1bc84d17c4fb11283f206ce79bb60f9f1073f4a2b5d8326",
     "checkver": {
-        "regex": "ver. ([\\d.]+)"
+        "script": [
+            "$page -match 'v(?:er)?\\.\\s*(?<version>[\\d.]+)' | Out-Null",
+            "$version = $matches['version']",
+            "$page -match '/(?<name>(?:[^/]+)otf(?:[^/]+)\\.zip)' | Out-Null",
+            "$name = $matches['name']",
+            "Write-Output \"$version $name\""
+        ],
+        "regex": "^(.+?) (?<name>.+)$"
     },
     "autoupdate": {
-        "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/qtm$versionotf.zip"
+        "url": "https://www.gust.org.pl/projects/e-foundry/tex-gyre/termes/$matchName"
     },
     "installer": {
         "script": [
@@ -90,5 +97,5 @@
             "    Write-Host \"The '$app' Font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta",
             "}"
         ]
-    } 
+    }
 }
